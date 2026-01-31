@@ -1,0 +1,8 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "buildCommand": "cd poli-frontend && npm run build",
+    "devCommand": "cd poli-frontend && npm run dev",
+    "installCommand": "cd poli-frontend && npm install",
+    "framework": "nextjs",
+    "outputDirectory": "poli-frontend/.next"
+}
