@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base.org Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 221 100% 50%;
+    /* Base Blue #0052FF */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 96%;
+    /* Light Gray #f4f4f5 */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    /* Medium Gray #71717a */
+    --accent: 240 5% 90%;
+    /* #e4e4e7 */
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 90%;
+    /* #e4e4e7 */
+    --input: 240 6% 90%;
+    --ring: 221 100% 50%;
+    /* Base Blue */
+    --radius: 0.5rem;
+
+    /* Base.org Extended Colors */
+    --base-blue: 221 100% 50%;
+    /* #0052FF */
+    --base-gray-50: 0 0% 98%;
+    /* #fafafa */
+    --base-gray-100: 240 5% 96%;
+    /* #f4f4f5 */
+    --base-gray-200: 240 6% 90%;
+    /* #e4e4e7 */
+    --base-gray-700: 240 4% 46%;
+    /* #71717a */
+    --base-gray-900: 240 10% 4%;
+    /* #09090b */
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    /* #09090b */
+    --foreground: 0 0% 98%;
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 221 100% 50%;
+    /* Base Blue stays same */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 221 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Glassmorphism Effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass-dark {
+    background: rgba(9, 9, 11, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass-border {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .glass-border-dark {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Glow Effects */
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(0, 82, 255, 0.3);
+  }
+
+  .glow-blue-lg {
+    box-shadow: 0 0 40px rgba(0, 82, 255, 0.4);
+  }
+
+  .glow-hover {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 25px rgba(0, 82, 255, 0.4);
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-smooth-fast {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Card Elevation */
+  .card-elevated {
+    @apply shadow-sm hover:shadow-md;
+  }
+
+  .font-pixel {
+    font-family: var(--font-pixel), monospace;
+  }
+}
